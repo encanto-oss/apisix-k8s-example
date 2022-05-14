@@ -1,0 +1,48 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{},"name":"apisix-dashboard","namespace":"ingress-apisix"},"spec":{"rules":[{"host":"ddddd.laqar.tk","http":{"paths":[{"backend":{"service":{"name":"apisix-dashboard","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}]}}
+  creationTimestamp: "2022-05-14T09:19:40Z"
+  generation: 2
+  managedFields:
+  - apiVersion: networking.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+      f:spec:
+        f:rules: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2022-05-14T09:19:40Z"
+  - apiVersion: networking.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:ingressClassName: {}
+    manager: node-fetch
+    operation: Update
+    time: "2022-05-14T09:22:08Z"
+  name: apisix-dashboard
+  namespace: ingress-apisix
+  resourceVersion: "26522"
+  uid: 00c85446-3e02-40f2-b910-e4b042ba7f02
+spec:
+  ingressClassName: apisix
+  rules:
+  - host: ddddd.laqar.tk
+    http:
+      paths:
+      - backend:
+          service:
+            name: apisix-dashboard
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer: {}
